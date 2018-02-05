@@ -29,3 +29,11 @@ Configuring client to use mentioned properties:
  spring.cloud.config.uri=localhost:8888
  ```
  * To update the data from the client side add `@RefreshScope` on your bean that is using properties.
+ and add actuator dependency
+
+ ```code
+ <dependency>
+ 	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-actuator</artifactId>
+ </dependency>
+ ```
