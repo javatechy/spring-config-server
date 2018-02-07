@@ -11,21 +11,22 @@ Adding a new Configuration:
 Configuring client to use mentioned properties:
 -----------------------------
  
- * Add this dependency into your pom
+ * Add this dependency into your pom 
  
  ```code
  <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
+            <version>1.4.1.RELEASE</version>
  </dependency>
  ```
  
- * Add following configuration in your application properties. Assuming your spring cloud sever is running on localhost:8888
+ * Create `bootstrap.properties`  in `src\main\resources` and ddd following configurations. Assuming your spring cloud sever is running on localhost:8888
  
  ```code
  server.port=8080
- spring.application.name=app1db
- spring.profiles.active=default
+ spring.application.name=applicaitonName
+ spring.profiles.active=dev
  spring.cloud.config.uri=localhost:8888
  ```
  * To update the data from the client side add `@RefreshScope` on your bean that is using properties.
